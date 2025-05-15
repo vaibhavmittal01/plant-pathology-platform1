@@ -204,48 +204,10 @@
           padding: 0.7rem 0.2rem 0.7rem 0.2rem;
         }
       }
-      /* Dark mode styles */
-      body.dark-mode {
-        background: #1a1a1a;
-        color: #fff;
-      }
-      body.dark-mode .resources-content {
-        background: rgba(45, 45, 45, 0.92);
-        color: #fff;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-      }
-      body.dark-mode .resource-card {
-        background: #2d2d2d;
-        color: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      }
-      body.dark-mode .resource-desc {
-        color: #b3b3b3;
-      }
-      body.dark-mode .section-title {
-        color: #43cea2;
-      }
-      body.dark-mode .lang-btn {
-        background: #3d3d3d;
-        color: #fff;
-      }
-      body.dark-mode .lang-btn.active {
-        background: #43cea2;
-        color: #fff;
-      }
-      body.dark-mode .nav-btn {
-        background: rgba(45, 45, 45, 0.7);
-        color: #43cea2;
-      }
-      body.dark-mode .nav-btn:hover {
-        background: #43cea2;
-        color: #fff;
-      }
     </style>
   </head>
   <body>
     <script>
-      // Check and apply dark mode on page load
       if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
       }

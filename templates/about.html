@@ -176,62 +176,10 @@
           font-size: 2rem;
         }
       }
-      /* Dark mode styles */
-      body.dark-mode {
-        background: #1a1a1a;
-        color: #fff;
-      }
-      body.dark-mode .about-content {
-        background: rgba(45, 45, 45, 0.92);
-        color: #fff;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.2);
-      }
-      body.dark-mode .about-section-title {
-        color: #43cea2;
-      }
-      body.dark-mode .about-text {
-        color: #b3b3b3;
-      }
-      body.dark-mode .about-features-list {
-        color: #b3b3b3;
-      }
-      body.dark-mode .card {
-        background: #2d2d2d;
-        color: #fff;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      }
-      body.dark-mode .text-muted {
-        color: #b3b3b3 !important;
-      }
-      body.dark-mode .nav-btn {
-        background: rgba(45, 45, 45, 0.7);
-        color: #43cea2;
-      }
-      body.dark-mode .nav-btn:hover {
-        background: #43cea2;
-        color: #fff;
-      }
-      body.dark-mode .btn-outline-primary {
-        color: #43cea2;
-        border-color: #43cea2;
-      }
-      body.dark-mode .btn-outline-primary:hover {
-        background: #43cea2;
-        color: #fff;
-      }
-      body.dark-mode .btn-outline-dark {
-        color: #fff;
-        border-color: #fff;
-      }
-      body.dark-mode .btn-outline-dark:hover {
-        background: #fff;
-        color: #2d2d2d;
-      }
     </style>
   </head>
   <body>
     <script>
-      // Check and apply dark mode on page load
       if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
       }
