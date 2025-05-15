@@ -1,0 +1,50 @@
+<annotation>
+	<folder>test</folder>
+	<filename>IMG_20180508_114909.jpg</filename>
+	<path>/home/abdul/Documents/models/research/object_detection/images/test/IMG_20180508_114909.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>390</width>
+		<height>520</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>tomato diseased leaf</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>175</xmin>
+			<ymin>282</ymin>
+			<xmax>222</xmax>
+			<ymax>325</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tomato flower</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>144</xmin>
+			<ymin>288</ymin>
+			<xmax>174</xmax>
+			<ymax>322</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>tomato plant</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>86</xmin>
+			<ymin>33</ymin>
+			<xmax>386</xmax>
+			<ymax>511</ymax>
+		</bndbox>
+	</object>
+</annotation>

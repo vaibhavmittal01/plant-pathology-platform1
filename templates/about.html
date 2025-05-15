@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About the Project - Plant Pathology Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+      body {
+        background: url('https://images.pexels.com/photos/7135066/pexels-photo-7135066.jpeg?auto=compress&w=1500&q=80') center center/cover no-repeat fixed;
+        min-height: 100vh;
+        font-family: 'Inter', Arial, sans-serif;
+        color: #222;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      .navbar-minimal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1.2rem 2.2rem 0.5rem 2.2rem;
+        z-index: 10;
+        background: transparent;
+        border-bottom-left-radius: 18px;
+        display: flex;
+        gap: 1.1rem;
+        box-shadow: none;
+      }
+      .nav-btn {
+        background: rgba(255,255,255,0.7);
+        color: #185a9d;
+        border: none;
+        border-radius: 8px;
+        padding: 0.45rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+        text-decoration: none;
+        outline: none;
+        box-shadow: none;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        will-change: transform;
+      }
+      .nav-btn:hover, .nav-btn:focus {
+        background: #43cea2;
+        color: #fff;
+        transform: scale(1.07);
+        box-shadow: 0 2px 12px rgba(67,206,162,0.13);
+      }
+      .nav-btn:active {
+        transform: scale(0.97);
+        background: #185a9d;
+        color: #fff;
+      }
+      .nav-btn .ripple {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple-anim 0.5s linear;
+        background: rgba(67,206,162,0.25);
+        pointer-events: none;
+        z-index: 2;
+      }
+      @keyframes ripple-anim {
+        to {
+          transform: scale(2.5);
+          opacity: 0;
+        }
+      }
+      .about-hero {
+        width: 100vw;
+        background: rgba(24,90,157,0.85);
+        padding: 1.7rem 0 1.2rem 0;
+        text-align: center;
+        color: #fff;
+        margin-bottom: 0;
+        box-shadow: 0 2px 12px rgba(24,90,157,0.08);
+      }
+      .about-title {
+        font-size: 2.3rem;
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        margin-top: 0.1rem;
+        letter-spacing: 0.5px;
+      }
+      .about-sub {
+        font-size: 1.15rem;
+        color: #e3f6f5;
+        margin-bottom: 0;
+      }
+      .about-content {
+        max-width: 900px;
+        margin: 2.5rem auto 0 auto;
+        background: rgba(255,255,255,0.92);
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(24,90,157,0.07);
+        padding: 2.5rem 2.2rem 2.2rem 2.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.22s cubic-bezier(.4,1.4,.6,1), box-shadow 0.22s cubic-bezier(.4,1.4,.6,1);
+      }
+      .about-content:hover {
+        transform: scale(1.025);
+        box-shadow: 0 8px 32px rgba(24,90,157,0.13);
+      }
+      .about-section-title {
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1.1rem;
+        color: #222;
+      }
+      .about-text {
+        font-size: 1.08rem;
+        color: #333;
+        margin-bottom: 2.2rem;
+      }
+      .about-features-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.7rem;
+        color: #222;
+      }
+      .about-features-list {
+        font-size: 1.08rem;
+        color: #222;
+        margin-left: 1.2rem;
+      }
+      .card {
+        transition: transform 0.18s cubic-bezier(.4,1.4,.6,1), box-shadow 0.18s cubic-bezier(.4,1.4,.6,1);
+      }
+      .card:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 32px rgba(67,206,162,0.13);
+      }
+      .btn-outline-primary, .btn-outline-dark {
+        transition: background 0.18s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-outline-primary:hover, .btn-outline-primary:focus {
+        background: #43cea2;
+        color: #fff;
+        transform: scale(1.07);
+        box-shadow: 0 2px 12px rgba(67,206,162,0.13);
+      }
+      .btn-outline-dark:hover, .btn-outline-dark:focus {
+        background: #185a9d;
+        color: #fff;
+        transform: scale(1.07);
+        box-shadow: 0 2px 12px rgba(24,90,157,0.13);
+      }
+      .btn-outline-primary:active, .btn-outline-dark:active {
+        transform: scale(0.96);
+      }
+      .btn-outline-primary .ripple, .btn-outline-dark .ripple {
+        position: absolute;
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple-anim 0.5s linear;
+        background: rgba(67,206,162,0.18);
+        pointer-events: none;
+        z-index: 2;
+      }
+      @media (max-width: 700px) {
+        .about-content {
+          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+          margin: 1.2rem 0 0 0;
+        }
+        .about-title {
+          font-size: 2rem;
+        }
+      }
+      /* Dark mode styles */
+      body.dark-mode {
+        background: #1a1a1a;
+        color: #fff;
+      }
+      body.dark-mode .about-content {
+        background: rgba(45, 45, 45, 0.92);
+        color: #fff;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+      }
+      body.dark-mode .about-section-title {
+        color: #43cea2;
+      }
+      body.dark-mode .about-text {
+        color: #b3b3b3;
+      }
+      body.dark-mode .about-features-list {
+        color: #b3b3b3;
+      }
+      body.dark-mode .card {
+        background: #2d2d2d;
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      body.dark-mode .text-muted {
+        color: #b3b3b3 !important;
+      }
+      body.dark-mode .nav-btn {
+        background: rgba(45, 45, 45, 0.7);
+        color: #43cea2;
+      }
+      body.dark-mode .nav-btn:hover {
+        background: #43cea2;
+        color: #fff;
+      }
+      body.dark-mode .btn-outline-primary {
+        color: #43cea2;
+        border-color: #43cea2;
+      }
+      body.dark-mode .btn-outline-primary:hover {
+        background: #43cea2;
+        color: #fff;
+      }
+      body.dark-mode .btn-outline-dark {
+        color: #fff;
+        border-color: #fff;
+      }
+      body.dark-mode .btn-outline-dark:hover {
+        background: #fff;
+        color: #2d2d2d;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Check and apply dark mode on page load
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+    </script>
+    <nav class="navbar-minimal">
+      <a href="/" class="nav-btn">Home</a>
+      <a href="/resources" class="nav-btn">Resources</a>
+      <a href="/about" class="nav-btn">About Us</a>
+    </nav>
+    <div class="about-hero">
+      <div class="about-title">About the Project</div>
+      <div class="about-sub">Learn more about our mission and the team behind the Plant Pathology Platform</div>
+    </div>
+    <div class="about-content text-start" style="align-items: flex-start; text-align: left;">
+      <div class="about-section-title">Project Description</div>
+      <div class="about-text">
+        <p>The Plant Pathology Platform is a cutting-edge solution aimed at transforming the way plant diseases are detected and managed in agriculture. With the rise of crop infections and the need for early diagnosis, our platform empowers farmers, agronomists, and agricultural researchers to take timely action by providing accurate and instant disease identification through image analysis.</p>
+
+        <p>By harnessing the power of machine learning and computer vision, users can simply upload an image of an affected leaf, and the platform will analyze it against a trained neural network to determine the most probable disease. The model has been trained on thousands of labeled plant images, ensuring a high level of precision in its predictions.</p>
+        
+        This platform not only improves the efficiency of disease management but also reduces dependency on expert visits for diagnosis. It serves as a vital decision-support tool for optimizing crop health and yield, especially in rural or resource-limited areas where access to expert consultation may be limited.  </div>
+      <div class="about-features-title" style="text-align:left;">Key Features</div>
+      <ul class="about-features-list" style="text-align:left;">
+        <li>AI-powered disease detection using deep learning models.</li>
+        <li>Comprehensive disease information and treatment recommendations.</li>
+        <li>Detailed PDF reports with visual analytics.</li>
+        <li>Multi-language support for better accessibility.</li>
+        <li>User-friendly interface for easy image upload and analysis.</li>
+      </ul>
+    </div>
+    <div class="about-content text-start" style="margin-top:2rem; align-items: flex-start; text-align: left;">
+      <div class="about-section-title">About the Authors</div>
+      <div class="row g-3" style="width:100%;">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-0" style="border-radius:14px;">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Vaibhav Mittal</h5>
+              <div class="text-muted mb-2" style="font-size:1rem;">Machine Learning Developer</div>
+              <div class="mb-3" style="font-size:0.98rem;">Computer Science student passionate about applying AI to solve real-world agricultural problems. Developed the core machine learning models and web application.</div>
+              <a href="mailto:vaibhav.mittal1@s.amity.edu" class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+              <a href="https://github.com/vaibhavmittal01" target="_blank" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-0" style="border-radius:14px;">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Amitabh Halder</h5>
+              <div class="text-muted mb-2" style="font-size:1rem;">Backend Developer</div>
+              <div class="mb-3" style="font-size:0.98rem;">Experienced backend developer specializing in Python and Flask. Responsible for implementing the server-side logic and API endpoints.</div>
+              <a href="mailto:amitabh.halder@s.amity.edu" class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+              <a href="https://github.com/amitabhhalder17" target="_blank" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-0" style="border-radius:14px;">
+            <div class="card-body">
+              <h5 class="card-title mb-1">Manan Bhatia</h5>
+              <div class="text-muted mb-2" style="font-size:1rem;">Frontend Developer</div>
+              <div class="mb-3" style="font-size:0.98rem;">Creative frontend developer focused on creating intuitive and responsive user interfaces. Implemented the modern UI design and interactive features.</div>
+              <a href="mailto:manan.bhatia2@s.amity.edu" class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-envelope-fill me-1"></i>Contact</a>
+              <a href="https://github.com/thisismanan" target="_blank" class="btn btn-outline-dark btn-sm"><i class="bi bi-github me-1"></i>GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="about-content text-start" style="margin-top:2rem; align-items: flex-start; text-align: left;">
+      <div class="about-section-title" style="text-align:left;">Acknowledgments</div>
+      <div class="about-text" style="margin-bottom:0; text-align:left;">
+        We would like to thank:
+        <ul style="margin-top:0.7rem; text-align:left;">
+          <li><b>Dr. Vasudha Vashisht</b> Ma'am, for her unwavering guidance, mentorship, and encouragement throughout the journey. Her insightful feedback, expertise, and continuous support played a pivotal role in shaping the direction and quality of this work.</li>
+          <li>The open-source community, whose remarkable contributions in the form of tools, libraries, datasets, and documentation made the technical implementation of our platform both possible and efficient. Resources such as TensorFlow, Keras, OpenCV, and others were instrumental in building the foundation of this system.</li>
+          <li>The farming community, especially the farmers who generously shared their feedback, real-world challenges, and practical insights. Their input helped us tailor the solution to meet actual agricultural needs and added real value to our project's outcomes.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="about-content text-start" style="margin-top:2rem; align-items: flex-start; text-align: left;">
+      <div class="about-section-title" style="text-align:left;">Technical Details</div>
+      <div class="about-text" style="margin-bottom:0; text-align:left;">
+        Our platform is built using:
+        <ul style="margin-top:0.7rem; text-align:left;">
+          <li><b>Python with Flask (Backend Web Framework):</b>
+            Python, a versatile and powerful programming language, serves as the backbone of our application. We use Flask, a lightweight yet flexible micro web framework, to handle routing, request processing, and integration between the frontend and backend. Flask's simplicity and modularity allowed us to rapidly develop and deploy our application while maintaining clean and readable code.</li>
+          <li><b>Tensorflow(Deep Learning Framework):</b>
+            Our platform incorporates TensorFlow, one of the most widely-used deep learning libraries, for building and running neural network models. It enables efficient loading, preprocessing, and prediction of plant disease images using a trained convolutional neural network (CNN). TensorFlow's scalability and GPU support allow the model to handle large volumes of image data with high accuracy and performance.</li>
+          <li><b>Bootstrap (Frontend and Responsive Design):</b>
+            The user interface is built using Bootstrap, a popular HTML, CSS, and JavaScript framework. It helps us design a responsive and mobile-friendly layout, ensuring users have a consistent and intuitive experience across various devices. With pre-built components and grid systems, Bootstrap enables quick UI development with a professional finish.</li>
+          <li><b>ReportLab (PDF Generation):</b>
+            For generating downloadable PDF reports that summarize disease predictions and image analysis, we utilize ReportLab. It allows the dynamic creation of high-quality PDF documents, complete with images, diagnosis results, timestamps, and user input. This feature is especially useful for maintaining farm records or sharing findings with agronomists.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="about-content" style="margin-top:2rem;">
+      <div class="about-section-title">Research Paper</div>
+      <div class="card border mb-2" style="border-radius:10px;">
+        <div class="card-body">
+          <div style="font-weight:600; font-size:1.1rem;">Plant Disease Detection Using Deep Learning</div>
+          <div style="font-size:0.98rem; margin:0.5rem 0 1rem 0;">
+            Our research paper explores the implementation of deep learning models for plant disease detection and classification. The paper discusses the methodology, results, and potential applications in agricultural pathology.
+          </div>
+          <a href="/research-paper" class="btn btn-primary" style="position: relative; overflow: hidden;">
+            <i class="bi bi-file-earmark-arrow-down me-1"></i>Download PDF
+            <span class="ripple"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="feature-buttons">
+      <button class="feature-btn" id="darkModeToggle">
+        <i class="bi bi-moon-fill"></i> Dark Mode
+      </button>
+    </div>
+    <script>
+      // Ripple effect for nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          ripple.className = 'ripple';
+          ripple.style.left = (e.offsetX - 10) + 'px';
+          ripple.style.top = (e.offsetY - 10) + 'px';
+          ripple.style.width = ripple.style.height = '20px';
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 500);
+        });
+      });
+      // Ripple effect for author card buttons
+      document.querySelectorAll('.btn-outline-primary, .btn-outline-dark').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          ripple.className = 'ripple';
+          ripple.style.left = (e.offsetX - 10) + 'px';
+          ripple.style.top = (e.offsetY - 10) + 'px';
+          ripple.style.width = ripple.style.height = '20px';
+          this.appendChild(ripple);
+          setTimeout(() => ripple.remove(), 500);
+        });
+      });
+      // Dark mode toggle
+      const darkModeToggle = document.getElementById('darkModeToggle');
+      if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+          document.body.classList.toggle('dark-mode');
+          const icon = darkModeToggle.querySelector('i');
+          if (document.body.classList.contains('dark-mode')) {
+            icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+            localStorage.setItem('darkMode', 'enabled');
+          } else {
+            icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+            localStorage.setItem('darkMode', 'disabled');
+          }
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html> 
